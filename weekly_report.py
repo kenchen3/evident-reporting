@@ -262,7 +262,7 @@ for stat in latest_for_teams_json['data']:
         last_page_num = 1
         if 'links' in alerts_json and 'last' in alerts_json['links']:
             alerts_url = alerts_json['links']['last']
-            last_page_num = get_page_num(alerts_url)
+            last_page_num = get_page_number(alerts_url)
             alerts_json = call_api('GET', alerts_url, data)
             count = 100 * last_page_num
         else:
